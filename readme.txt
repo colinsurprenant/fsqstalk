@@ -8,10 +8,10 @@ Developed using Ruby 1.9.2
 This project was initially created at the Foursquare hack day at the Notman House in Montreal 
 to create a Foursquare Venue stalking engine. I wanted to be able to see in "realtime" the checkins
 at a particular venue. The Venue and Stalker objects provides this functionality.
-The Venue object interfaces with a Foursquare venue and the Stalker is the engine which periodically
+The Venue object interfaces with a Foursquare venue and the Stalker object is the engine which periodically
 polls Foursquare and generates checkin/checkout events. 
 
-An extra challenge was to add a web layer on top of the stalker engine with support for
+An extra challenge was to add a web layer on top of the stalker engine with support for:
 - basic html page listing all events
 - json endpoint returning new events since the last poll
 - websocket endpoint for realtime event push to the browser
@@ -20,13 +20,18 @@ This was achieved using mix of Sinatra, Rack, Thin, WebSocket-Rack and EventMach
 
 Usage:
 
-- first you need to get a Foursquare access token and insert it in the console.rb or config.ru files.
+- first you need to get a Foursquare access token and insert it in the console.rb and/or config.ru files.
 see http://developer.foursquare.com/docs/oauth.html
 
-- for a quick try of the stalker engine you can use the console by simply running: ruby bin/console
-you can edit the venue list you want to stalk inside console.rb
+- for a quick try of the stalker engine use the console. Edit the venue list to stalk inside console.rb and run: 
 
-- to start the web app, run: thin-websocket start and connect to:
+$ ruby bin/console
+
+- to start the web app, run:
+
+$ thin-websocket start 
+
+- the web app exposes the following endpoint:
   - http://localhost:3000/events
   - http://localhost:3000/events.json
   - http://localhost:3000/wsclient.html
