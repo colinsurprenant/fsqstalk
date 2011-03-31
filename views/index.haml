@@ -1,0 +1,6 @@
+%body
+	%div.title listing #{@events.size} events
+
+	- @events.each do |event|
+		%div.event #{Time.at(event[:created_at]).strftime("%m/%d/%Y %R")} #{event[:type].to_s.upcase} #{event[:venue]['name']} (#{event[:venue_id]}) / #{event[:user]['firstName']} #{event[:user]['lastName']} (#{event[:user_id]}))
+
