@@ -2,8 +2,6 @@
 #
 # Author::    Colin Surprenant  (mailto:colin.surprenant@gmail.com)
 
-$:.unshift File.dirname(__FILE__) + '/../lib/'
-
 require 'sinatra/base'
 require 'rack/contrib/jsonp'
 require 'haml'

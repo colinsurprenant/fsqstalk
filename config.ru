@@ -8,7 +8,7 @@ require 'lib/runner'
 
 
 runner = FsqStalker::Runner.instance
-runner.setup('2CKHTPKDII2ZWXBGK2UYCZG3LBWDVGJTCGBUHDZYZGZL5NU2')
+runner.setup('YOUR_FSQ_ACCESS_TOKEN')
 
 runner.stalker.add_venue("173438")  # yul
 runner.stalker.add_venue("12238") # sfo  

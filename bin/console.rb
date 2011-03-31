@@ -8,11 +8,11 @@ require 'rubygems'
 require 'lib/stalker'
 
 listener = lambda do |event|
-  puts("#{Time.now.strftime("%m/%d/%Y %R")} #{event[:type].to_s.upcase} #{event[:venue_name]} (#{event[:venue_id]}) / #{event[:user]['firstName']} #{event[:user]['lastName']} (#{event[:user_id]})")
+  puts("#{Time.now.strftime("%m/%d/%Y %R")} #{event[:type].to_s.upcase} #{event[:venue]['name']} (#{event[:venue_id]}) / #{event[:user]['firstName']} #{event[:user]['lastName']} (#{event[:user_id]})")
 end
 
 begin
-  stalker = FsqStalker::Stalker.new('2CKHTPKDII2ZWXBGK2UYCZG3LBWDVGJTCGBUHDZYZGZL5NU2')
+  stalker = FsqStalker::Stalker.new('YOUR_FSQ_ACCESS_TOKEN')
   # stalker.add_venue("4013658") # maison notman
   # stalker.add_venue("599266")  # le plateau mont-royal
   # stalker.add_venue("128530") # foursquare
